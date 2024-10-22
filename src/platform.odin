@@ -576,7 +576,7 @@ setup_fonts :: proc(pt: ^Platform_State) {
 }
 
 setup_graphics :: proc(pt: ^Platform_State) -> (ok: bool) {
-	lru.init(&pt.lru_text_cache, 1000)
+	lru.init(&pt.lru_text_cache, 50)
 	pt.lru_text_cache.on_remove = rm_text_cache
 
 	// Load statically packed fonts
